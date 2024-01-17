@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <version>1.4.3</version>
+  <groupId>nl.rivm.testautomation</groupId>
+  <artifactId>SeleniumTestTemplate</artifactId>
+  <packaging>jar</packaging>
+
+  <properties>
+    <!-- This is an example implementation on how to set up properties for Docker in the POM. 
+      Docker setup has to be done on a project by project basis.-->
+    <docker.version>0.41.0</docker.version>
+    <!-- Might be needed by Selenium/Chrome to work properly inside a docker container in some cases.
+      Override this if needed. Take security into consideration when overriding this. Or better yet,
+      accept that you throw any security considerations out the window when overriding this. -->
+    <docker.privileged>false</docker.privileged>
+    <docker.container.name>STT-test-run</docker.container.name>
+    <docker.selenium.hub.port>4444</docker.selenium.hub.port>
+    <docker.selenium.vnc.port>5900</docker.selenium.vnc.port>
+    <docker.selenium.novnc.port>7900</docker.selenium.novnc.port>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>nl.rivm.testautomation</groupId>
+      <artifactId>selenium-test-framework</artifactId>
+      <version>1.4.3</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>11</source>
+          <target>11</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <version>${docker.version}</version>
+        <configuration>
+          <images>
+            <image>
+              <!-- The name of the image needs to correspond with the name from the publicly available releases for standalone docker images. -->
+              <name>selenium/standalone-${settings.usebrowser}:${docker.selenium.version}-${docker.build.version}</name>
+              <alias>${docker.container.name}</alias>
+              <run>
+                <privileged>${docker.privileged}</privileged>
+                <ports>
+                  <!-- Port 4444 is the standard port for the WebDriver. -->
+                  <port>${docker.selenium.hub.port}:4444</port>
+                  <!-- Port 5900 is the standard port for the VNC viewer. -->
+                  <port>${docker.selenium.vnc.port}:5900</port>
+                  <!-- Port 7900 is the standard port for the in-browser viewer. -->
+                  <port>${docker.selenium.novnc.port}:7900</port>
+                </ports>
+                <env>
+                  <!-- A large number of environment variables can be set, for instance the screen size. -->
+                  <SE_SCREEN_WIDTH>1936</SE_SCREEN_WIDTH>
+                  <SE_SCREEN_HEIGHT>1056</SE_SCREEN_HEIGHT>
+                  <!-- The maximum number of concurrent sessions, only applicable if parallel testing is supported. -->
+                  <SE_NODE_MAX_SESSIONS>2</SE_NODE_MAX_SESSIONS>
+                </env>
+                <!-- The minimum size is 524288000 bytes, the recommended minimum is however 2GB in bytes. -->
+                <shmSize>2147483648</shmSize>
+                <wait>
+                <!-- Setting a wait makes sure that the docker image is running correctly before starting your test scenarios. -->
+                  <http>
+                    <url>http://localhost:${docker.selenium.hub.port}</url>
+                  </http>
+                  <!-- Timeout to stop polling unresponsive URL after 15 seconds, usually ready in ~4 seconds -->
+                  <time>15000</time>
+                </wait>
+              </run>
+            </image>
+          </images>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

@@ -1,0 +1,21 @@
+# Eclipse files      #
+######################
+/.metadata/
+.settings/
+.project
+.classpath
+.checkstyle
+.pmd
+.eclipse-pmd
+.ruleset
+.apt_generated
+.externalToolBuilders
+/ucdetector_reports
+
+# Build folders      #
+######################
+target/
+bin/
+
+# Config folders
+config/*

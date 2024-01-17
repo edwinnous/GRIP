@@ -1,0 +1,17 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "userName": "BROWSERSTACK_USERNAME",
+  "accessKey": "BROWSERSTACK_ACCESSKEY",
+
+  "capabilities": {
+    "projectName": "SeleniumTestTemplate",
+    "buildName": "BuildName",
+    "sessionName": "SessionName",
+    "debug": true,
+    "browserstack.local": true
+  },
+
+  "environments": [{
+    "browserName": "Chrome"
+  }]
+}
