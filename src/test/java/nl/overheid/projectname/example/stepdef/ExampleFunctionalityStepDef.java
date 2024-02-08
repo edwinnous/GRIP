@@ -17,19 +17,19 @@ public class ExampleFunctionalityStepDef {
     exampleAction = new ExampleFunctionalityAction();
   }
 
-//  @Then("^the user navigates to the search page$")
-//  public void go_to_search_page() {
-//    base.buttonClick(By.id("edit-submit-zoekresultaten"));
-//  }
+  @Then("^the user navigates to the search page$")
+  public void go_to_search_page() {
+    base.buttonClick(By.id("edit-submit-zoekresultaten"));
+  }
 
-  //If a StepDef does more than 1 thing it should be moved to a corresponding Action class.
-//  @Then("^the status message contains '(.+)'$")
-//  public void check_status_message(final String statusMessage) {
-//    exampleAction.checkErrorMessage(statusMessage);
-//  }
-//
-//  @Then("^the page title is '(.+)'$")
-//  public void check_page_title(final String pageTitle) {
-//    Assert.assertEquals(pageTitle, base.waitForElementVisible(By.xpath("//h1")).getText());
-//  }
+//  If a StepDef does more than 1 thing it should be moved to a corresponding Action class.
+  @Then("^the status message contains '(.+)'$")
+  public void check_status_message(final String statusMessage) {
+    exampleAction.checkErrorMessage(statusMessage);
+  }
+
+  @Then("^the page title is '(.+)'$")
+  public void check_page_title(final String pageTitle) {
+    Assert.assertEquals(pageTitle, base.waitForElementVisible(By.xpath("//h1")).getText());
+  }
 }

@@ -13,9 +13,9 @@ public class GenericStepDef {
     base = new ProjectNameTestBase();
     generic = new GenericAction();
   }
-//
-//  @Given("^RIVM is open$")
-//  public void rivm_application_is_open() {
-//    generic.browserReload(base.getRunParameterAsString(GenericAction.TEST_APP_PATH));
-//  }
+
+  @Given("^RIVM is open$")
+  public void rivm_application_is_open() {
+    generic.browserReload(base.getRunParameterAsString(GenericAction.TEST_APP_PATH));
+  }
 }
