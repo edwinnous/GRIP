@@ -1,10 +1,10 @@
-package nl.overheid.projectname.shared.actions;
+package nl.overheid.digv.shared.actions;
 
 import org.openqa.selenium.*;
 import org.slf4j.*;
 
-import nl.overheid.projectname.base.ProjectNameTestBase;
-import nl.overheid.projectname.shared.stepdef.LogInStepDef.UserRoles;
+import nl.overheid.digv.base.DIGVTestBase;
+import nl.overheid.digv.shared.stepdef.LogInStepDef.UserRoles;
 import nl.overheid.stf.cucumber.base.SeleniumDriverWrapper;
 
 /**
@@ -19,11 +19,11 @@ import nl.overheid.stf.cucumber.base.SeleniumDriverWrapper;
 public class LogInAction {
 
   private static final Logger LOG = LoggerFactory.getLogger(LogInAction.class);
-  private final ProjectNameTestBase base;
+  private final DIGVTestBase base;
   private WebDriver driver;
 
   public LogInAction() {
-    base = new ProjectNameTestBase();
+    base = new DIGVTestBase();
     driver = SeleniumDriverWrapper.getInstance().getDriver();
   }
 

@@ -1,4 +1,4 @@
-package nl.overheid.projectname;
+package nl.overheid.digv;
 
 import org.junit.runner.RunWith;
 
@@ -19,8 +19,8 @@ import io.cucumber.junit.*;
     features = {"src/test/resources/example"},
     glue = {
         "nl.overheid.stf.shared.stepdef",
-        "nl.overheid.projectname.shared",
-        "nl.overheid.projectname.example.stepdef",
+        "nl.overheid.digv.shared",
+        "nl.overheid.digv.example.stepdef",
         },
     tags = "@api and not @ignore"
     )

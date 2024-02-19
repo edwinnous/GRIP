@@ -1,4 +1,4 @@
-package nl.overheid.projectname.example.stepdef;
+package nl.overheid.digv.example.stepdef;
 
 import java.time.Duration;
 
@@ -8,16 +8,16 @@ import org.openqa.selenium.By;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import nl.overheid.projectname.base.ProjectNameTestBase;
-import nl.overheid.projectname.example.actions.ExampleFunctionalityAction;
+import nl.overheid.digv.base.DIGVTestBase;
+import nl.overheid.digv.example.actions.ExampleFunctionalityAction;
 
 public class ExampleFunctionalityStepDef {
 
-  private final ProjectNameTestBase base;
+  private final DIGVTestBase base;
   private final ExampleFunctionalityAction exampleAction;
 
   public ExampleFunctionalityStepDef() {
-    base = new ProjectNameTestBase();
+    base = new DIGVTestBase();
     exampleAction = new ExampleFunctionalityAction();
   }
  
@@ -41,6 +41,12 @@ public class ExampleFunctionalityStepDef {
   public void click_sign_in() {
     base.buttonClick(By.name("login"));
   }
+
+  @When("^the user clicks Zaken$")
+  public void click_zaken() {
+	base.browserWait(Duration.ofSeconds(4));
+    base.buttonClick(base.waitForElementVisible(By.xpath("//a[@href=\"/cases\"]")));
+  }
   
 //  If a StepDef does more than 1 thing it should be moved to a corresponding Action class.
   @Then("^the status message contains '(.+)'$")
@@ -52,6 +58,5 @@ public class ExampleFunctionalityStepDef {
   public void check_page_title(final String pageTitle) {
 	base.browserWait(Duration.ofSeconds(4));
     Assert.assertEquals(pageTitle, base.waitForElementPresent(By.xpath("//title")).getText());
-    base.inputse
   }
 }

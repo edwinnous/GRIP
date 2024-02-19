@@ -1,4 +1,4 @@
-package nl.overheid.projectname.example.actions;
+package nl.overheid.digv.example.actions;
 
 import java.io.InputStream;
 
@@ -6,19 +6,19 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.slf4j.*;
 
-import nl.overheid.projectname.base.ProjectNameTestBase;
+import nl.overheid.digv.base.DIGVTestBase;
 import nl.overheid.stf.cucumber.base.SeleniumDriverWrapper;
 import nl.overheid.stf.cucumber.shared.FileUtil;
 
 public class ExampleFunctionalityAction {
   //Instantiate the Logger LOG.
   private static final Logger LOG = LoggerFactory.getLogger(ExampleFunctionalityAction.class);
-  private final ProjectNameTestBase base;
+  private final DIGVTestBase base;
   //Declare the WebDriver driver.
   private WebDriver driver;
 
   public ExampleFunctionalityAction() {
-    base = new ProjectNameTestBase();
+    base = new DIGVTestBase();
     //Instantiate and get the driver by calling the SeleniumDriverWrapper class and getDriver method.
     driver = SeleniumDriverWrapper.getInstance().getDriver();
   }

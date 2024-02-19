@@ -1,4 +1,4 @@
-package nl.overheid.projectname;
+package nl.overheid.digv;
 
 import org.junit.runner.RunWith;
 
@@ -25,12 +25,12 @@ import nl.overheid.stf.cucumber.base.CucumberBase;
         "nl.overheid.stf.cucumber.shared.action",
         "nl.overheid.stf.cucumber.shared",
         "nl.overheid.stf.shared.stepdef",
-        "nl.overheid.projectname.shared",
-        "nl.overheid.projectname.example.stepdef",
+        "nl.overheid.digv.shared",
+        "nl.overheid.digv.example.stepdef",
         },
     //Only features that have the specified set of tags will be executed.
     tags = "@nightly and not @ignore"
     )
-public class ProjectNameCucumberSuiteTest extends CucumberBase {
+public class DIGVCucumberSuiteTest extends CucumberBase {
 
 }

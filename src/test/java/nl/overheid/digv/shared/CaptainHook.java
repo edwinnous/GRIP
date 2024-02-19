@@ -1,9 +1,9 @@
- package nl.overheid.projectname.shared;
+ package nl.overheid.digv.shared;
 
 import org.slf4j.*;
 
 import io.cucumber.java.After;
-import nl.overheid.projectname.base.ProjectNameTestBase;
+import nl.overheid.digv.base.DIGVTestBase;
 
 /**
  * If your projects needs @Before or @After hooks it can be defined in a Hooks class like this.
@@ -11,7 +11,7 @@ import nl.overheid.projectname.base.ProjectNameTestBase;
 
 public class CaptainHook {
 
-  private static final Logger LOG = LoggerFactory.getLogger(ProjectNameTestBase.class);
+  private static final Logger LOG = LoggerFactory.getLogger(DIGVTestBase.class);
   /**
    * Log this info message after each scenario.
    */

@@ -67,7 +67,7 @@ In Eclipse these can be set as `VM arguments` in your run configurations.
 The complete set of automated UI tests is usually scheduled to run after a nightly build completes and executed using a single maven command from jenkins. However, this a bit too much for developing and maintaining specific tests. So, each product's test set can also be executed individually (conveniently from within eclipse) by running one of the following test classes as a JUnit test:
 
 ## Runner Classes
-Runner classes should extend the `CucumberBase` class to take care of properly starting up and shutting down selenium driver instances. An example can be found in `src/test/java` > `nl.overheid.projectname` package.
+Runner classes should extend the `CucumberBase` class to take care of properly starting up and shutting down selenium driver instances. An example can be found in `src/test/java` > `nl.overheid.digv` package.
 
 ### Tags
 By default all of the product specific scripts mentioned above are set up to run the complete set of tests identified by the `@nightly` tag and can not have the tag `@ignore`. Feature files may also contain a list of relevant tags to facilitate more fine grained testexecution of specific features like `@end-to-end`, `@fire` and `@smoke` for example. If so required test execution can be limited to a single test scenario by applying a unique tag to a specific scenario in the cucumber feature file.

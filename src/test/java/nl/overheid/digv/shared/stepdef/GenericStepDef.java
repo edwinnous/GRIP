@@ -1,16 +1,16 @@
-package nl.overheid.projectname.shared.stepdef;
+package nl.overheid.digv.shared.stepdef;
 
 import io.cucumber.java.en.Given;
-import nl.overheid.projectname.base.ProjectNameTestBase;
-import nl.overheid.projectname.shared.actions.GenericAction;
+import nl.overheid.digv.base.DIGVTestBase;
+import nl.overheid.digv.shared.actions.GenericAction;
 
 public class GenericStepDef {
 
-  private final ProjectNameTestBase base;
+  private final DIGVTestBase base;
   private final GenericAction generic;
 
   public GenericStepDef() {
-    base = new ProjectNameTestBase();
+    base = new DIGVTestBase();
     generic = new GenericAction();
   }
 

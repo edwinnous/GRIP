@@ -15,7 +15,7 @@
  * along with this program.  If not, see http://www.gnu.org/licenses/.
  */
 
-package nl.overheid.projectname.base;
+package nl.overheid.digv.base;
 
 import org.openqa.selenium.*;
 import org.slf4j.*;
@@ -27,13 +27,13 @@ import nl.overheid.stf.cucumber.shared.*;
  * The TestBase class is used for generic Selenium functionality. 
  * This class extends the SeleniumTestFramework FunctionalTestBase.
  */
-public class ProjectNameTestBase extends FunctionalTestBase{
+public class DIGVTestBase extends FunctionalTestBase{
 
-  private static final Logger LOG = LoggerFactory.getLogger(ProjectNameTestBase.class);
+  private static final Logger LOG = LoggerFactory.getLogger(DIGVTestBase.class);
   private WebDriver driver;
   private final LoremLibrary lorem;
 
-  public ProjectNameTestBase() {
+  public DIGVTestBase() {
     super(SeleniumDriverWrapper.getInstance());
     driver = SeleniumDriverWrapper.getInstance().getDriver();
     lorem = LoremLibrary.getInstance();

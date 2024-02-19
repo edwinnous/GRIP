@@ -1,4 +1,4 @@
-package nl.overheid.projectname;
+package nl.overheid.digv;
 
 import org.junit.runner.RunWith;
 

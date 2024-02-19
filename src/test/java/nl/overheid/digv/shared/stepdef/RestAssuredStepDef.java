@@ -1,10 +1,10 @@
-package nl.overheid.projectname.shared.stepdef;
+package nl.overheid.digv.shared.stepdef;
 
 import java.io.IOException;
 import java.util.List;
 
 import io.cucumber.java.en.*;
-import nl.overheid.projectname.shared.EndPoint;
+import nl.overheid.digv.shared.EndPoint;
 import nl.overheid.stf.cucumber.base.RestAssuredWrapper;
 import nl.overheid.stf.cucumber.shared.FileUtil;
 

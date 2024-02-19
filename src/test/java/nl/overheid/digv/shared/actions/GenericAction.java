@@ -1,9 +1,9 @@
-package nl.overheid.projectname.shared.actions;
+package nl.overheid.digv.shared.actions;
 
 import org.openqa.selenium.WebDriver;
 import org.slf4j.*;
 
-import nl.overheid.projectname.base.ProjectNameTestBase;
+import nl.overheid.digv.base.DIGVTestBase;
 import nl.overheid.stf.cucumber.base.SeleniumDriverWrapper;
 
 public class GenericAction {
@@ -25,7 +25,7 @@ public class GenericAction {
    */
   public void browserReload(final String url) {
     LOG.debug("Initializing browser at url: {}", url);
-    new ProjectNameTestBase().browserAlertAccept();
+    new DIGVTestBase().browserAlertAccept();
     SeleniumDriverWrapper.getInstance().setSessionCookies();
     driver.get(url);
     final String current = driver.getCurrentUrl();

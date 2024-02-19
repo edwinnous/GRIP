@@ -1,4 +1,4 @@
-package nl.overheid.projectname.shared;
+package nl.overheid.digv.shared;
 
 /**
  * A convenient enumeration of example end-points in RIVMweb.

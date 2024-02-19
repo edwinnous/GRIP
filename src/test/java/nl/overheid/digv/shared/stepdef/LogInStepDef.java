@@ -1,7 +1,7 @@
-package nl.overheid.projectname.shared.stepdef;
+package nl.overheid.digv.shared.stepdef;
 
 import io.cucumber.java.en.Given;
-import nl.overheid.projectname.shared.actions.LogInAction;
+import nl.overheid.digv.shared.actions.LogInAction;
 
 public class LogInStepDef {
 
