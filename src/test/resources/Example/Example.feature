@@ -21,14 +21,16 @@ Feature: Example feature
   This example shows how to build up the Cucumber scenarios
 
   Background: 
-    Given RIVM is open
+    Given Atabase is open
 
   @test
   Scenario: Go to RIVM search page
     #Given the user is logged in as 'ADMIN'
-    When the user navigates to the search page
-    Then the status message contains 'Er is geen zoekopdracht ingevoerd, voer een zoekopdracht in.'
-     And the page title is 'Zoeken'
+    When the user enters the username 'edwin.nous@rivm.nl'
+    And the user enters the password 'bYjMMZLuqqzRsG3'
+    And the user clicks sign in
+    #Then the status message contains 'Er is geen zoekopdracht ingevoerd, voer een zoekopdracht in.'
+    Then the page title is 'Dashboard'
      #Then the user adds a new 'Landingspagina'
     #Given I want to write a step with precondition
       #And some other precondition

@@ -18,4 +18,9 @@ public class GenericStepDef {
   public void rivm_application_is_open() {
     generic.browserReload(base.getRunParameterAsString(GenericAction.TEST_APP_PATH));
   }
+  
+  @Given("^Atabase is open$")
+  public void atabase_is_open() {
+    generic.browserReload(base.getRunParameterAsString(GenericAction.TEST_APP_PATH));
+  }
 }
